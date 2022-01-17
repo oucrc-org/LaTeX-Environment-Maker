@@ -1,0 +1,10 @@
+# MacOS
+.DS_Store
+
+# LaTeX
+*.aux
+*.dvi
+*.fdb_latexmk
+*.fls
+*.log
+*.gz

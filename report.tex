@@ -1,0 +1,110 @@
+% ファイル先頭から\begin{document}までの内容（プレアンブル）については，
+% 基本的に { } の中を書き換えるだけでよい．
+\documentclass[autodetect-engine,dvi=dvipdfmx,ja=standard,
+               a4j,11pt]{bxjsarticle}
+
+%%======== プレアンブル ============================================%%
+% 用紙設定：指示があれば，適切な余白に設定しなおす
+\RequirePackage{geometry}
+\geometry{reset,a4paper}
+\geometry{hmargin=25truemm,top=25truemm,bottom=25truemm,footskip=10truemm}
+%\geometry{showframe} % 本文の"枠"を確認したければ，コメントアウト
+
+% 設定：図の挿入
+% http://www.edu.cs.okayama-u.ac.jp/info/tool_guide/tex.html#graphicx
+\usepackage{graphicx}
+
+% 設定：ソースコードの挿入
+% http://www.edu.cs.okayama-u.ac.jp/info/tool_guide/tex.html#fancyvrb
+\usepackage{fancyvrb}
+\renewcommand{\theFancyVerbLine}{\texttt{\footnotesize{\arabic{FancyVerbLine}:}}}
+
+%%======== レポートタイトル等 ======================================%%
+% ToDo: 提出要領に従って，適切なタイトル・サブタイトルを設定する
+\title{プログラミング演習1 \\
+       期末レポート}
+
+% ToDo: 自分自身の氏名と学生番号に書き換える
+\author{氏名: 原 直 (HARA, Sunao) \\
+        学生番号: 0941xxxx}
+
+% ToDo: レポート課題等の指示に従って適切に書き換える
+\date{出題日: 20xx年xx月xx日 \\
+      提出日: 20xx年xx月xx日 \\
+      締切日: 20xx年xx月xx日 \\}  % 注：最後の\\は不要に見えるが必要．
+
+
+%%======== 本文 ====================================================%%
+\begin{document}
+\maketitle
+% 目次つきの表紙ページにする場合はコメントを外す
+%{\footnotesize \tableofcontents \newpage}
+
+%% 本文は以下に書く．課題に応じて適切な章立てを構成すること．
+%% 章＝\section，節＝\subsection，項＝\subsubsection である．
+
+%--------------------------------------------------------------------%
+\section{概要} \label{sec:abstract}
+
+
+%--------------------------------------------------------------------%
+\section{プログラムの作成方針}
+
+
+%--------------------------------------------------------------------%
+\section{プログラムの説明}
+
+
+%--------------------------------------------------------------------%
+\section{プログラムの使用法と実行結果}
+
+
+%--------------------------------------------------------------------%
+\section{考察}
+
+
+%--------------------------------------------------------------------%
+\section{感想}
+
+
+%--------------------------------------------------------------------%
+\section{作成したプログラムのソースコード}
+
+作成したプログラムを以下に添付する．
+なお，\ref{sec:abstract}章に示した課題については，
+\ref{xxxx}章で示したようにすべて正常に動作したことを付記しておく．
+
+% Verbatim environment
+% プリアンブルで \usepackage{fancyvrb} が必要．
+%   - numbers           行番号を表示．left なら左に表示．
+%   - xleftmargin       枠の左の余白．行番号表示用に余白を与えたい．
+%   - numbersep         行番号と枠の間隙 (gap)．デフォルトは 12 pt．
+%   - fontsize          フォントサイズ指定
+%   - baselinestretch   行間の大きさを比率で指定．デフォルトは 1.0．
+\begin{Verbatim}[numbers=left, xleftmargin=10mm, numbersep=6pt,
+                    fontsize=\small, baselinestretch=0.8]
+#include <stdio.h>
+
+int main()
+{
+    char s[4] = {'A', 'B', 'C', '\0'};
+
+    printf("s = %s\n", s);
+
+    return 0;
+}
+\end{Verbatim}
+
+%--------------------------------------------------------------------%
+% 参考文献
+%   以下は，書き方の例である．実際に，参考にした書籍等を見て書くこと．
+%   本文で引用する際は，\cite{book:algodata}などとすればよい．
+\begin{thebibliography}{99}
+  \bibitem{book:algodata} 平田富雄，アルゴリズムとデータ構造，森北出版，1990.
+  \bibitem{book:label2} 著者名，書名，出版社，発行年.
+  \bibitem{www:label3} WWWページタイトル，URL，アクセス日.
+\end{thebibliography}
+
+%--------------------------------------------------------------------%
+%% 本文はここより上に書く（\begin{document}～\end{document}が本文である）
+\end{document}
