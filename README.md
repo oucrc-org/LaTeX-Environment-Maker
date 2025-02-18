@@ -1,3 +1,9 @@
+# !!This repository is archived!!
+
+この環境はメンテされていない上、image が過剰にでかいので、以下を使ってください
+
+https://github.com/Paperist/texlive-ja
+
 # LaTeXの環境構築ツール with Docker
 
 ## 用意するもの
